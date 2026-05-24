@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: "A celebration of beauty, grace, and distinction. Today, the universe honors Edrine Desire.",
     images: [
       {
-        url: "/images/1.jpg",
+        url: "/images/1.JPG",
         width: 800,
         height: 1200,
         alt: "Edrine Desire - Written in the Stars",
