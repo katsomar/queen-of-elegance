@@ -13,13 +13,13 @@ interface GalleryPhoto {
 const col1Photos: GalleryPhoto[] = [
   {
     id: 1,
-    src: "/images/photo1.jpg",
+    src: "/images/1.jpg",
     alt: "Evelyn Portrait",
     heightClass: "h-[460px] md:h-[540px]",
   },
   {
     id: 4,
-    src: "/images/photo4.jpg",
+    src: "/images/2.jpg",
     alt: "Cinematic Horizon",
     heightClass: "h-[380px] md:h-[440px]",
   },
@@ -28,13 +28,13 @@ const col1Photos: GalleryPhoto[] = [
 const col2Photos: GalleryPhoto[] = [
   {
     id: 2,
-    src: "/images/photo2.jpg",
+    src: "/images/3.jpg",
     alt: "Moments of Joy",
     heightClass: "h-[380px] md:h-[440px]",
   },
   {
     id: 5,
-    src: "/images/photo5.jpg",
+    src: "/images/4.jpg",
     alt: "Sweet Smile",
     heightClass: "h-[480px] md:h-[580px]",
   },
@@ -43,13 +43,13 @@ const col2Photos: GalleryPhoto[] = [
 const col3Photos: GalleryPhoto[] = [
   {
     id: 3,
-    src: "/images/photo3.jpg",
+    src: "/images/5.jpg",
     alt: "Celebration",
     heightClass: "h-[480px] md:h-[560px]",
   },
   {
     id: 6,
-    src: "/images/photo6.jpg",
+    src: "/images/6.jpg",
     alt: "Wonderful Memories",
     heightClass: "h-[380px] md:h-[420px]",
   },

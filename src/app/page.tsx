@@ -17,8 +17,23 @@ import PageLoader from "@/components/PageLoader"; // Letter Reveal Loader
 import CustomCursor from "@/components/CustomCursor";
 import FloatingDecorations from "@/components/FloatingDecorations";
 
+// Master switch: Set to true to activate the Tomorrow 8:00 AM lock/countdown screen.
+// Set to false to preview the website and intro letter loader immediately.
+const ENABLE_COUNTDOWN = false;
+
 export default function Home() {
-  const [stage, setStage] = useState<"countdown" | "loader" | "content">("countdown");
+  const [stage, setStage] = useState<"countdown" | "loader" | "content">(
+    ENABLE_COUNTDOWN ? "countdown" : "loader"
+  );
+
+  // Play name loader automatically if countdown is bypassed/disabled
+  useState(() => {
+    if (!ENABLE_COUNTDOWN) {
+      setTimeout(() => {
+        setStage("content");
+      }, 3200);
+    }
+  });
 
   const handleCountdownComplete = () => {
     setStage("loader");

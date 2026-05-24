@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Large main star -->
+  <path d="M50 15 C50 40 60 50 85 50 C60 50 50 60 50 85 C50 60 40 50 15 50 C40 50 50 40 50 15 Z" fill="#C9956C" />
+  <!-- Small top-right star -->
+  <path d="M78 22 C78 30 82 34 90 34 C82 34 78 38 78 46 C78 38 74 34 66 34 C74 34 78 30 78 22 Z" fill="#F5E6D3" />
+  <!-- Small bottom-left star -->
+  <path d="M22 66 C22 72 25 75 31 75 C25 75 22 78 22 84 C22 78 19 75 13 75 C19 75 22 72 22 66 Z" fill="#F2B5C5" />
+</svg>

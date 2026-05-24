@@ -120,7 +120,7 @@ export default function FinalWish() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.5, delay: 0.5 }}
-          className="text-4xl sm:text-5xl font-handwriting text-rose-gold mb-16 select-none"
+          className="text-4xl sm:text-5xl font-signature text-rose-gold mb-16 select-none"
         >
           Edrine Desire
         </motion.p>

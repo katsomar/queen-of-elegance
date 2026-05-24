@@ -21,20 +21,20 @@ const dancing = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "Queen of elegance",
+  title: "Written in the Stars",
   description: "A celebration of beauty, grace, and distinction. Today, the universe honors Edrine Desire.",
   icons: {
-    icon: "/images/photo1.jpg",
+    icon: "/star-icon.svg",
   },
   openGraph: {
-    title: "Queen of elegance",
+    title: "Written in the Stars",
     description: "A celebration of beauty, grace, and distinction. Today, the universe honors Edrine Desire.",
     images: [
       {
         url: "/images/photo1.jpg",
         width: 800,
         height: 1200,
-        alt: "Edrine Desire - Queen of elegance",
+        alt: "Edrine Desire - Written in the Stars",
       },
     ],
     type: "website",
