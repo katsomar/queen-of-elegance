@@ -1,26 +1,162 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-rose-gold: #C9956C;
+  --color-champagne: #F5E6D3;
+  --color-plum: #4A1942;
+  --color-mauve: #C67B9A;
+  --color-pearl: #FDF8F5;
+  --color-blush: #F2B5C5;
+  --color-midnight-dark: #1A0A14;
+  --color-midnight-light: #2D1B2E;
+  
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-signature: var(--font-dancing), cursive;
+  
+  --animate-infinite-scroll: infinite-scroll 40s linear infinite;
+  --animate-candle-glow: candle-glow 2s ease-in-out infinite alternate;
+  --animate-candle-flicker: candle-flicker 1.5s ease-in-out infinite alternate;
+  --animate-ray-rotate: ray-rotate 60s linear infinite;
+  --animate-orbit-cw: orbit-cw 25s linear infinite;
+  --animate-orbit-ccw: orbit-ccw 30s linear infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes candle-glow {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+    filter: blur(2px);
+  }
+  100% {
+    transform: scale(1.05);
+    opacity: 1;
+    filter: blur(4px);
+  }
 }
+
+@keyframes candle-flicker {
+  0%, 100% {
+    transform: scaleX(1) scaleY(1) rotate(-1deg);
+  }
+  20% {
+    transform: scaleX(0.9) scaleY(1.05) rotate(1deg);
+  }
+  40% {
+    transform: scaleX(1.05) scaleY(0.95) rotate(-2deg);
+  }
+  60% {
+    transform: scaleX(0.95) scaleY(1.02) rotate(2deg);
+  }
+  80% {
+    transform: scaleX(1.02) scaleY(0.98) rotate(0deg);
+  }
+}
+
+@keyframes ray-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-cw {
+  0% {
+    transform: rotate(0deg) translateY(var(--orbit-radius, 140px)) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateY(var(--orbit-radius, 140px)) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-ccw {
+  0% {
+    transform: rotate(360deg) translateY(var(--orbit-radius, 100px)) rotate(-360deg);
+  }
+  100% {
+    transform: rotate(0deg) translateY(var(--orbit-radius, 100px)) rotate(0deg);
+  }
+}
+
+:root {
+  --background: #1A0A14;
+  --foreground: #FDF8F5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+/* Glassmorphism utility helpers */
+.glass-panel {
+  background: rgba(26, 10, 20, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(201, 149, 108, 0.1);
+}
+
+.glass-panel-light {
+  background: rgba(245, 230, 211, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(74, 25, 66, 0.08);
+}
+
+/* Custom scrollbar to match aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1A0A14;
+}
+::-webkit-scrollbar-thumb {
+  background: #4A1942;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C67B9A;
+}
+
+/* Gradient cycle background for Closing section */
+.bg-gradient-cycling {
+  background: linear-gradient(135deg, #1A0A14, #4A1942, #C9956C, #F5E6D3, #4A1942, #1A0A14);
+  background-size: 400% 400%;
+  animation: gradient-cycle 20s ease infinite;
+}
+
+@keyframes gradient-cycle {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Custom Cursor Reset for Fine Pointers */
+@media (pointer: fine) {
+  html, body, a, button, [role="button"], .cursor-pointer, .interactive-candle, .gallery-item, .glass-panel {
+    cursor: none !important;
+  }
+}
+
