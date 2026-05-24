@@ -21,6 +21,7 @@ const dancing = Dancing_Script({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://queen-of-elegance.vercel.app"),
   title: "Written in the Stars",
   description: "A celebration of beauty, grace, and distinction. Today, the universe honors Edrine Desire.",
   icons: {
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     description: "A celebration of beauty, grace, and distinction. Today, the universe honors Edrine Desire.",
     images: [
       {
-        url: "/images/1.JPG",
+        url: "/images/2.JPG",
         width: 800,
         height: 1200,
         alt: "Edrine Desire - Written in the Stars",
