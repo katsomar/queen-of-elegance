@@ -12,12 +12,8 @@ export default function Countdown({ onComplete }: CountdownProps) {
   const [hasLoaded, setHasLoaded] = useState(false);
 
   useEffect(() => {
-    // Calculate tomorrow 8:00 AM dynamically
-    const now = new Date();
-    const target = new Date();
-    target.setDate(now.getDate() + 1);
-    target.setHours(8, 0, 0, 0);
-    const targetTime = target.getTime();
+    // Target exactly May 25, 2026 at 8:00 AM (EAT / +03:00 offset)
+    const targetTime = new Date("2026-05-25T08:00:00+03:00").getTime();
 
     const updateTimer = () => {
       const currentTime = new Date().getTime();

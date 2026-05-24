@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import Hero from "@/components/Hero";
@@ -26,14 +26,21 @@ export default function Home() {
     ENABLE_COUNTDOWN ? "countdown" : "loader"
   );
 
-  // Play name loader automatically if countdown is bypassed/disabled
-  useState(() => {
-    if (!ENABLE_COUNTDOWN) {
+  useEffect(() => {
+    if (ENABLE_COUNTDOWN) {
+      const TARGET_TIME = new Date("2026-05-25T08:00:00+03:00").getTime();
+      if (Date.now() >= TARGET_TIME) {
+        setStage("loader");
+        setTimeout(() => {
+          setStage("content");
+        }, 3200);
+      }
+    } else {
       setTimeout(() => {
         setStage("content");
       }, 3200);
     }
-  });
+  }, []);
 
   const handleCountdownComplete = () => {
     setStage("loader");
