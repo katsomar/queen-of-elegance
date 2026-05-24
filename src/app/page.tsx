@@ -19,7 +19,7 @@ import FloatingDecorations from "@/components/FloatingDecorations";
 
 // Master switch: Set to true to activate the Tomorrow 8:00 AM lock/countdown screen.
 // Set to false to preview the website and intro letter loader immediately.
-const ENABLE_COUNTDOWN = false;
+const ENABLE_COUNTDOWN = true;
 
 export default function Home() {
   const [stage, setStage] = useState<"countdown" | "loader" | "content">(
